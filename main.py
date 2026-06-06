@@ -26,6 +26,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Nexus Cloud API"}
+
 @app.get("/health")
 @app.get("/ping")
 async def health_check():
