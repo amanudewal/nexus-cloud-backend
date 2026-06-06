@@ -48,6 +48,11 @@ async def search(query: str):
         'quiet': True,
         'extract_flat': 'in_playlist' if is_url else True, 
         'skip_download': True,
+        'extractor_args': {
+            'youtube': {
+                'client': ['android', 'ios', 'mweb', 'web']
+            }
+        }
     }
     
     try:
@@ -104,6 +109,11 @@ async def get_stream_url(url: str):
         'quiet': True,
         'skip_download': True,
         'youtube_include_dash_manifest': False,
+        'extractor_args': {
+            'youtube': {
+                'client': ['android', 'ios', 'mweb', 'web']
+            }
+        }
     }
     try:
         def extract():
